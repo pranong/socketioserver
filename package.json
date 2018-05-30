@@ -11,7 +11,7 @@
     "open": "heroku open",
     "logs": "heroku logs --tail",
     "deploy": "git push heroku master",
-    "start": "LOCAL=TRUE node app.js"
+    "start": "node src/app.js"
   },
   "dependencies": {
     "express": "^4.11.2",
