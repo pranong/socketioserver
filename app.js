@@ -69,6 +69,10 @@ io.on('connection', function(socket){
     socket.room = name;
   });
 
+  socket.on('leave', function(name, callback){
+    console.log('leave', name);
+    socket.leave(name);
+  });
 
   socket.on('exchange', function(data){
     console.log('exchange', data);
