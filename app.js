@@ -71,7 +71,11 @@ io.on('connection', function(socket){
 
   socket.on('leave', function(name, callback){
     console.log('leave', name);
-    socket.leave(name);
+    if (socket.room) {
+      var room = socket.room;
+      io.to(room).emit('leave', socket.id);
+      socket.leave(room);
+    }
   });
 
   socket.on('exchange', function(data){
