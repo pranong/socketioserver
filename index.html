@@ -48,7 +48,7 @@ var remoteViewContainer = document.getElementById("remoteViewContainer");
 var localStream;
 
 function getLocalStream() {
-  navigator.getUserMedia({ "audio": false, "video": true }, function (stream) {
+  navigator.getUserMedia({ "audio": true, "video": true }, function (stream) {
     localStream = stream;
     selfView.src = URL.createObjectURL(stream);
     selfView.muted = true;
