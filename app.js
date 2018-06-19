@@ -70,10 +70,11 @@ io.on('connection', function(socket){
   });
 
   socket.on('leave', function(name, callback){
-    console.log('leave', name);
     if (socket.room) {
       var room = socket.room;
       io.to(room).emit('leave', socket.id);
+      console.log('leave', room);
+      console.log('id:', socket.id);
       socket.leave(room);
     }
   });
