@@ -73,7 +73,7 @@ io.on('connection', function(socket){
     console.log('leave', name);
     if (socket.room) {
       var room = socket.room;
-      // io.to(room).emit('leave', socket.id);
+      io.to(room).emit('leave', socket.id);
       socket.leave(room);
     }
   });
